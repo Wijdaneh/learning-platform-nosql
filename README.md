@@ -194,3 +194,26 @@ Voici un aperçu de la structure du projet :
   "author": "Auteur"
 }
 ```
+
+**Demonstration** :
+![Créer un cours](post-course.JPG)
+
+### Lister les cours
+**GET** `/api/courses`
+
+**Demonstration** :
+![Lister les cours](get-courses.JPG)
+
+### Consulter un cours
+**GET** `/api/courses/:id`
+
+**Demonstration** :
+![Consulter un cours](get-course.JPG)
+
+### Supprimer un cours
+**DELETE** `/api/courses/:id`
+
+**Demonstration** :
+![Consulter un cours](deleteCourse.JPG)
+
+#### "Nous vous invitons cordialement à poser vos questions ou à partager vos suggestions d'amélioration. 😊"
