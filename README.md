@@ -95,3 +95,27 @@ Voici un aperçu de la structure du projet :
 - `.env.example`: Exemple de configuration d'environnement.
 - `README.md`: Documentation principale du projet.
 - `app.js`: Point d'entrée principal de l'application.
+
+## ✨ Choix techniques
+
+### MongoDB
+- **Utilisation** : Stockage structuré des cours.
+- **Avantages** : Scalabilité et support des requêtes complexes.
+
+### Redis
+- **Utilisation** : Mise en cache des cours pour améliorer les performances.
+- **Avantages** : Faible latence pour les données fréquemment consultées.
+
+### Node.js avec Express
+- **Utilisation** : Configuration rapide et flexible des APIs RESTful.
+
+### Postman
+- **Utilisation** : Test des APIs en local de manière efficace.
+- **Avantages** : Interface graphique intuitive, possibilité d'automatiser les tests d'API, support pour la gestion de variables d'environnement et l'import/export de collections de requêtes.
+
+### Architecture
+- Basée sur une séparation claire entre les routes, les contrôleurs, et les services pour un code maintenable.
+
+- Utilisation de MongoDB et Redis pour stocker et mettre en cache les données.
+- Utilisation de Node.js avec Express pour configurer les APIs RESTful.
+- Utilisation de Postman pour tester les APIs en local de manière efficace.
