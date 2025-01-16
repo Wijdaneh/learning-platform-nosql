@@ -1,60 +1,97 @@
-# Projet de fin de module NoSQL
+# Learning Platform Project
 
-Pour ce projet, vous allez créer une petite API qui va servir de backend à une plateforme d'apprentissage en ligne. J'ai préparé la structure du projet avec une organisation professionnelle du code, comme vous pouvez le constater dans ce dépôt Github.
+Ce projet est une plateforme d'apprentissage qui utilise MongoDB, Redis et Node.js pour gérer les cours.
 
-Commençons par l'organisation pratique :
+## 🛠️ Installation et lancement du projet
 
-1. Création de votre dépôt :
-   - Sur Github.com
-   - Créez un nouveau dépôt public
-   - Nommez-le "learning-platform-nosql"
-   - Ne l'initialisez pas avec un README pour le moment
+### Prérequis
 
-2. Configuration de votre environnement local :
-   ```bash
-   # Clonez mon dépôt template (ce dépôt)
-   git clone https://github.com/pr-daaif/learning-platform-template
-   
-   # Renommez le dépôt origin
-   cd learning-platform-template
-   git remote remove origin
-   
-   # Ajoutez votre dépôt comme nouvelle origine
-   git remote add origin https://github.com/[votre-compte]/learning-platform-nosql
-   
-   # Poussez le code vers votre dépôt
-   git push -u origin main
-   ```
+- Node.js version 14 ou supérieure
+- MongoDB et Redis installés localement ou accessibles via une URI distante
 
-3. Installation des dépendances :
-   ```bash
-   npm install
-   ```
+### Étapes d'installation
 
-Je vous propose une structure de code qui suit les bonnes pratiques de développement. Vous trouverez dans le code des commentaires avec des **questions qui vous guideront dans votre réflexion**. Ces questions sont importantes car elles vous aideront à comprendre les choix d'architecture.
+#### 1. Création de votre dépôt :
 
-### Aspects professionnels à noter :
-- Utilisation des variables d'environnement pour la configuration
-- Séparation claire des responsabilités (routes, contrôleurs, services)
-- Gestion propre des connexions aux bases de données
-- Organisation modulaire du code
-- Gestion des erreurs et des cas limites
-- Documentation du code
+- Sur [Github.com](https://github.com)
+  - Créez un nouveau dépôt public
+  - Nommez-le "learning-platform-nosql"
+  - Ne l'initialisez pas avec un README pour le moment
 
-### Pour le rendu, voici ce que j'attends :
-1. Un dépôt public sur Github avec un historique de commits clair
-2. Un README.md qui explique :
-   - Comment installer et lancer le projet
-   - La structure du projet
-   - Les choix techniques que vous avez faits
-   - Les réponses aux questions posées dans les commentaires
-3. Le code complété avec tous les TODOs implémentés
+#### 2. Configuration de votre environnement local :
 
-### Je vous conseille de procéder étape par étape :
-1. Commencez par lire et comprendre la structure du projet
-2. Répondez aux questions des commentaires dans le README
-3. Implémentez progressivement les TODOs
-4. Testez chaque fonctionnalité au fur et à mesure
-5. Documentez vos choix et vos réflexions en ajoutant des copies d'écrans à votre fichier README.md
+Clonez mon dépôt template (ce dépôt) :
 
-#### Bon courage
+```bash
+git clone https://github.com/Wijdane/learning-platform-template
+```
+
+Accédez au répertoire cloné :
+
+```bash
+cd learning-platform-template
+```
+
+Renommez le dépôt distant origin :
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/[votre-compte]/learning-platform-nosql
+```
+
+Poussez le code vers votre dépôt :
+
+```bash
+git push -u origin main
+```
+
+#### 3. Installation des dépendances :
+
+Installez les dépendances nécessaires pour exécuter le projet :
+
+```bash
+npm install
+```
+
+## 📂 Structure du projet
+
+Voici un aperçu de la structure du projet :
+
+```
+📂 learning-platform
+├── 📁 config          # Fichiers de configuration pour MongoDB, Redis, etc.
+│   ├── db.js          # Connexions à MongoDB et Redis
+│   └── env.js         # Chargement des variables d'environnement
+├── 📁 controllers     # Logique métier des API
+│   └── courseController.js  # Contrôleurs pour les opérations sur les cours
+├── 📁 routes          # Définition des routes de l'API
+│   └── courseRoutes.js       # Routes pour les opérations sur les cours
+├── 📁 services        # Services pour interagir avec MongoDB et Redis
+│   ├── mongoService.js       # Fonctions MongoDB
+│   └── redisService.js       # Fonctions Redis
+├── 📁 models          # Modèles pour MongoDB (à ajouter si nécessaire)
+├── 📄 package.json     # Dépendances et scripts
+├── 📄 package-lock.json # Verrouillage des versions des dépendances
+├── 📄 .env.example     # Exemple de fichier d'environnement
+├── 📄 README.md        # Documentation du projet
+└── 📄 app.js           # Point d'entrée de l'application
+```
+
+### Description des dossiers :
+
+- `config/`: Contient les fichiers de configuration pour les services comme MongoDB et Redis.
+  - `db.js`: Définit les connexions aux bases de données.
+  - `env.js`: Charge les variables d'environnement.
+- `controllers/`: Gère la logique métier des API.
+  - `courseController.js`: Contient les contrôleurs pour les cours.
+- `routes/`: Définit les routes de l'API.
+  - `courseRoutes.js`: Contient les routes liées aux cours.
+- `services/`: Fournit des fonctions pour interagir avec MongoDB et Redis.
+  - `mongoService.js`: Définit les fonctions spécifiques à MongoDB.
+  - `redisService.js`: Définit les fonctions spécifiques à Redis.
+- `models/`: Définit les modèles pour MongoDB (si nécessaire).
+- `package.json`: Décrit les dépendances et les scripts du projet.
+- `package-lock.json`: Verrouille les versions des dépendances.
+- `.env.example`: Exemple de configuration d'environnement.
+- `README.md`: Documentation principale du projet.
+- `app.js`: Point d'entrée principal de l'application.
